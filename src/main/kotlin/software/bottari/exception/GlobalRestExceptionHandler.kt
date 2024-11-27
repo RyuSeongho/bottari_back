@@ -1,6 +1,6 @@
-package exception
+package software.bottari.exception
 
-import dto.response.ResponseDto
+import software.bottari.dto.response.ResponseDto
 import org.springframework.http.ResponseEntity
 import org.springframework.http.converter.HttpMessageConversionException
 import org.springframework.web.bind.MethodArgumentNotValidException

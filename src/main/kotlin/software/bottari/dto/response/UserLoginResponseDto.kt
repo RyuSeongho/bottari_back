@@ -1,6 +1,6 @@
-package dto.response
+package software.bottari.dto.response
 
-import domain.User
+import software.bottari.domain.User
 
 data class UserLoginResponseDto(
     val name: String,

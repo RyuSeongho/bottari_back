@@ -1,14 +1,14 @@
-package controller
+package software.bottari.controller
 
-import dto.request.UserLoginRequestDto
-import dto.request.UserSignUpRequestDto
-import dto.response.ResponseDto
-import dto.response.UserLoginResponseDto
+import software.bottari.dto.request.UserLoginRequestDto
+import software.bottari.dto.request.UserSignUpRequestDto
+import software.bottari.dto.response.ResponseDto
+import software.bottari.dto.response.UserLoginResponseDto
 import lombok.RequiredArgsConstructor
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
-import service.UserService
+import software.bottari.service.UserService
 
 @RequiredArgsConstructor
 @RestController

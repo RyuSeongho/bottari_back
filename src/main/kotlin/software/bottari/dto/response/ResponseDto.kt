@@ -1,9 +1,9 @@
-package dto.response
+package software.bottari.dto.response
 
-import dto.exception.ExceptionDto
-import dto.exception.InvalidateArgumentExceptionDto
-import dto.exception.JSONConvertExceptionDto
-import exception.ApiException
+import software.bottari.dto.exception.ExceptionDto
+import software.bottari.dto.exception.InvalidateArgumentExceptionDto
+import software.bottari.dto.exception.JSONConvertExceptionDto
+import software.bottari.exception.ApiException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.http.converter.HttpMessageConversionException

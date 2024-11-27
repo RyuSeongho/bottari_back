@@ -1,6 +1,6 @@
-package dto.exception
+package software.bottari.dto.exception
 
-import exception.ErrorDefine
+import software.bottari.exception.ErrorDefine
 import org.springframework.http.HttpStatus
 
 open class ExceptionDto(

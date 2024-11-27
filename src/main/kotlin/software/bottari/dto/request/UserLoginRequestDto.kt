@@ -1,4 +1,4 @@
-package dto.request
+package software.bottari.dto.request
 
 data class UserLoginRequestDto(
     val email: String,

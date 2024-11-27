@@ -1,13 +1,13 @@
-package service
+package software.bottari.service
 
-import dto.request.UserLoginRequestDto
-import dto.request.UserSignUpRequestDto
-import dto.response.UserLoginResponseDto
-import exception.ApiException
-import exception.ErrorDefine
+import software.bottari.dto.request.UserLoginRequestDto
+import software.bottari.dto.request.UserSignUpRequestDto
+import software.bottari.dto.response.UserLoginResponseDto
+import software.bottari.exception.ApiException
+import software.bottari.exception.ErrorDefine
 import lombok.RequiredArgsConstructor
 import org.springframework.stereotype.Service
-import repository.UserRepository
+import software.bottari.repository.UserRepository
 
 @Service
 @RequiredArgsConstructor

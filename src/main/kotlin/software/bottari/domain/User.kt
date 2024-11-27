@@ -1,17 +1,13 @@
-package domain
+package software.bottari.domain
 
 import jakarta.persistence.*
-import lombok.Getter
-import lombok.RequiredArgsConstructor
 import org.hibernate.annotations.DynamicUpdate
 
 
 @Entity
-@RequiredArgsConstructor
-@Getter
 @DynamicUpdate
 @Table(name = "user_tb")
-class User(
+data class User(
 
     @Column val email: String, // 로그인 아이디
     @Column val password: String, // 비밀번호

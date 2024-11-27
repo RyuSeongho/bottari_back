@@ -1,4 +1,4 @@
-package exception
+package software.bottari.exception
 
 import org.springframework.http.HttpStatus
 
