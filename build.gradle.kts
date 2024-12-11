@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 plugins {
 	kotlin("jvm") version "1.9.25"
 	kotlin("plugin.spring") version "1.9.25"
@@ -38,6 +40,21 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+	//테스트
+	// Mockk 라이브러리
+	testImplementation("io.mockk:mockk:1.13.7")
+	// Spring과 Mockk 통합을 위한 SpringMockk
+	testImplementation("com.ninja-squad:springmockk:4.0.2")
+	//mockito
+	testImplementation("org.mockito:mockito-core:5.6.0")
+	testImplementation("org.mockito.kotlin:mockito-kotlin:4.1.0")
+	testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+
+//	// Kotest 의존성
+//	testImplementation("io.kotest:kotest-runner-junit5:5.5.1")  // Kotest 실행자
+//	testImplementation("io.kotest:kotest-assertions-core:5.5.1")  // Kotest Assertions (기본)
+//	testImplementation("io.kotest:kotest-framework-api:5.5.1") // Kotest API
 }
 
 kotlin {
@@ -52,6 +69,12 @@ allOpen {
 	annotation("jakarta.persistence.Embeddable")
 }
 
+tasks.test {
+	testLogging {
+		events("passed", "failed", "skipped")
+		showStandardStreams = true
+	}
+}
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
