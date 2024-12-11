@@ -50,7 +50,14 @@ dependencies {
 	testImplementation("org.mockito:mockito-core:5.6.0")
 	testImplementation("org.mockito.kotlin:mockito-kotlin:4.1.0")
 	testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+	// Spring WebFlux 의존성
+	implementation("org.springframework.boot:spring-boot-starter-webflux")
 
+	// Reactor Core (비동기 스트림 처리)
+	implementation("io.projectreactor:reactor-core")
+
+	// Reactor Test (리액티브 테스트를 위한 의존성)
+	testImplementation("io.projectreactor:reactor-test")
 //	// Kotest 의존성
 //	testImplementation("io.kotest:kotest-runner-junit5:5.5.1")  // Kotest 실행자
 //	testImplementation("io.kotest:kotest-assertions-core:5.5.1")  // Kotest Assertions (기본)
