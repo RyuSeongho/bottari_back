@@ -11,42 +11,6 @@ data class Freight(
     val id: Long = 0,
 
     @Column(nullable = false)
-    val title: String,
-
-    @Column(nullable = false)
-    val senderName: String,
-
-    @Column(nullable = false)
-    val senderAddress: String,
-
-    @Column(nullable = false)
-    val senderPhoneNumber: String,
-
-    @Column(nullable = false)
-    val receiverName: String,
-
-    @Column(nullable = false)
-    val receiverAddress: String,
-
-    @Column(nullable = false)
-    val receiverPhoneNumber: String,
-
-    @Column(nullable = false)
-    val receiver: String,
-
-    @Column(nullable = false)
-    val address: String,
-
-    @Column(nullable = false)
-    val isGoingAbroad: Boolean = false,
-
-    @Column(nullable = false)
-    val shippingStatus: String,
-
-    @Column(nullable = false)
-    val additionalDocumentFolderUrl: String? = null,
-
-    @Column(nullable = false)
     val productType: String,
 
     @Column(nullable = false)
@@ -55,8 +19,50 @@ data class Freight(
     @Column(nullable = false)
     val productWeight: Float,
 
-    @Column(nullable = true)
+    @Column(nullable = false)
+    val senderName: String,
+
+    @Column
+    val clearanceNumber: String,
+
+    @Column(nullable = false)
     val remark: String,
+
+    @Column(nullable = false)
+    val quantity: Int,
+
+    @Column(nullable = false)
+    val senderAddress: String,
+
+    @Column(nullable = false)
+    val senderNumber: String,
+
+    @Column(nullable = false)
+    val receiverName: String,
+
+    @Column(nullable = false)
+    val receiverAddress: String,
+
+    @Column(nullable = false)
+    val receiverNumber: Int,
+
+    @Column
+    val receiverCountry : String,
+
+    @Column
+    val receiverCity : String,
+
+    @Column
+    val receiverState : String,
+
+    @Column
+    val zipcodeReceiver : Int,
+
+    @Column
+    val shippingStatus: String="before",
+
+    @Column
+    val additionalDoc: String,
 
     @OneToOne(mappedBy = "freight", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val contract: Contract? = null

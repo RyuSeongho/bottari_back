@@ -13,6 +13,9 @@ data class Inquiry(
     @Column(nullable = false)
     val content: String,
 
+    @Column(nullable = false)
+    val title: String,
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     val member: Member,
