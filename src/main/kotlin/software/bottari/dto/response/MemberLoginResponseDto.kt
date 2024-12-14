@@ -3,7 +3,7 @@ package software.bottari.dto.response
 import software.bottari.domain.Member
 
 data class MemberLoginResponseDto(
-    val name: String,
+    val name: String
 
 ) {
     companion object {

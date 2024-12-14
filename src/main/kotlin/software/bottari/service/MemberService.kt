@@ -42,9 +42,7 @@ class MemberService(
             email = memberSignUpRequestDto.email,
             password = passwordEncoder.encode(memberSignUpRequestDto.password),
             name = memberSignUpRequestDto.name,
-            phoneNumber = memberSignUpRequestDto.phoneNumber,
-            privacyAgreed = true,
-            termsAgreed = true
+            phoneNumber = memberSignUpRequestDto.phoneNumber
         )
         memberRepository.save(newMember)
         return true

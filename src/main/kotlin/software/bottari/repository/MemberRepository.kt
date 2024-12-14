@@ -8,5 +8,5 @@ import java.util.*
 @Repository
 interface MemberRepository : JpaRepository<Member, Long> {
     fun findByEmail(name: String): Optional<Member>
-
+    fun findByName(name: String): Optional<Member>
 }
