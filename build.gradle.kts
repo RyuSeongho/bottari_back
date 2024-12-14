@@ -62,6 +62,9 @@ dependencies {
 //	testImplementation("io.kotest:kotest-runner-junit5:5.5.1")  // Kotest 실행자
 //	testImplementation("io.kotest:kotest-assertions-core:5.5.1")  // Kotest Assertions (기본)
 //	testImplementation("io.kotest:kotest-framework-api:5.5.1") // Kotest API
+
+	// security (비밀번호 해시 암호화)
+	implementation("org.springframework.boot:spring-boot-starter-security")
 }
 
 kotlin {

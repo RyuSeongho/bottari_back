@@ -1,10 +1,10 @@
 package software.bottari.dto.request
 
-data class UserLoginRequestDto(
+data class MemberLoginRequestDto(
     val email: String,
     val password: String
 ) {
-    fun toEntity(): UserLoginRequestDto {
+    fun toEntity(): MemberLoginRequestDto {
         return this.copy()
     }
 }
