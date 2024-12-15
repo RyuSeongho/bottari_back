@@ -56,7 +56,7 @@ data class Freight(
     val receiverState : String,
 
     @Column
-    val zipcodeReceiver : Int,
+    val receiverZipcode : Int,
 
     @Column
     val shippingStatus: String="before",
