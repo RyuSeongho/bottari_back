@@ -13,8 +13,11 @@ data class Inquiry(
     @Column(nullable = false)
     val content: String,
 
+    @Column(nullable = false)
+    val title: String,
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     val member: Member,
 
     @OneToOne(mappedBy = "inquiry", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)

@@ -11,6 +11,8 @@ enum class ErrorDefine(
     // NOT FOUND
     USER_NOT_FOUND("4040", HttpStatus.NOT_FOUND, "존재하지 않는 회원입니다."),
     INVALID_CREDENTIALS("4041", HttpStatus.NOT_FOUND, "비밀번호가 올바르지 않습니다."),
+    INQUIRY_NOT_FOUND("4042", HttpStatus.NOT_FOUND, "존재하지 않는 문의사항입니다."),
+    CONTRACT_NOT_FOUND("4043",HttpStatus.NOT_FOUND, "존재하지 않는 예약입니다."),
 
     // BAD REQUEST
     INVALID_FORMAT("4003", HttpStatus.BAD_REQUEST, "입력 값의 형식이 잘못되었습니다."),
