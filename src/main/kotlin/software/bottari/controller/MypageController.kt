@@ -3,9 +3,7 @@ package software.bottari.controller
 import lombok.RequiredArgsConstructor
 import org.springframework.web.bind.annotation.*
 import software.bottari.dto.request.InquiryRequestDto
-import software.bottari.dto.response.GetInquiryResponseDto
-import software.bottari.dto.response.InquiryResponseDto
-import software.bottari.dto.response.ResponseDto
+import software.bottari.dto.response.*
 import software.bottari.service.MypageService
 
 @RequiredArgsConstructor
@@ -23,4 +21,15 @@ class MypageController(
     fun getInquiry(@RequestParam(value = "inquiryId") inquiryId: Long): ResponseDto<GetInquiryResponseDto> {
         return ResponseDto(mypageService.getInquiry(inquiryId))
     }
+
+    @GetMapping("/inquiryList")
+    fun getInquiryList(@RequestParam(value="name") name: String,
+                       @RequestParam(value="page") page: Int): ResponseDto<InquiryListResponseDto> {
+        return ResponseDto(mypageService.getInquiryList(name, page))
+    }
+    @GetMapping("/status")
+    fun getStatus(@RequestParam(value = "orderId") orderId: Long): ResponseDto<StatusResponseDto>{
+        return ResponseDto(mypageService.getStatus(orderId))
+    }
+
 }
