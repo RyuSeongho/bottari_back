@@ -36,7 +36,7 @@ class ReservationService (
             receiverCountry = reservationRequestDto.receiverCountry,
             receiverCity = reservationRequestDto.receiverCity,
             receiverState = reservationRequestDto.receiverState,
-            zipcodeReceiver = reservationRequestDto.zipcodeReceiver,
+            receiverZipcode = reservationRequestDto.receiverZipcode,
             additionalDoc = reservationRequestDto.additionalDoc
         )
 

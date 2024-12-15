@@ -17,8 +17,7 @@ data class ReservationRequestDto(
     val receiverCountry : String,
     val receiverCity : String,
     val receiverState : String,
-    val stateReceiver : String,
-    val zipcodeReceiver : Int,
+    val receiverZipcode : Int,
     val shippingStatus: String,
     val additionalDoc: String
 ){
