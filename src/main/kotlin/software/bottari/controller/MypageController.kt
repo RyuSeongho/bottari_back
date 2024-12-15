@@ -31,5 +31,10 @@ class MypageController(
     fun getStatus(@RequestParam(value = "orderId") orderId: Long): ResponseDto<StatusResponseDto>{
         return ResponseDto(mypageService.getStatus(orderId))
     }
+    @GetMapping
+    fun getContractList(@RequestParam(value="name") name: String,
+                        @RequestParam(value="page") page: Int): ResponseDto<ContractListResponseDto>{
+        return ResponseDto(mypageService.getContractList(name, page))
+    }
 
 }
