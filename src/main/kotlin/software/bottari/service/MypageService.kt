@@ -16,9 +16,9 @@ import software.bottari.repository.*
 class MypageService(
     private val memberRepository: MemberRepository,
     private val inquiryRepository: InquiryRepository,
-    private val contractRepository: ContractRepository,
     private val deliveryStatusRepository: DeliveryStatusRepository,
-    private val trackingInfoRepository: TrackingInfoRepository
+    private val trackingInfoRepository: TrackingInfoRepository,
+    private val contractRepository: ContractRepository
 
 ){
     fun inquiry(inquiryRequestDto: InquiryRequestDto): InquiryResponseDto {
@@ -70,6 +70,24 @@ class MypageService(
         return StatusResponseDto.of(
             trackingList = trackingList,
             deliveryInfo = deliveryInfo
+        )
+    }
+    fun getContractList(memberName: String, page: Int): ContractListResponseDto {
+        val pageable = PageRequest.of(page, 10) // 페이지와 크기 설정
+        val contractPage = contractRepository.findAllByMemberName(memberName, pageable)
+
+        if (contractPage.isEmpty) {
+            throw ApiException(ErrorDefine.INQUIRY_NOT_FOUND)
+        }
+
+        val contractsDto = contractPage.content.map { contract ->
+            ContractResponseDto.of(contract)
+        }
+        val pageInfo = PageInfoResponseDto.of(contractPage)
+
+        return ContractListResponseDto.of(
+            contractList = contractsDto,
+            pageInfo = pageInfo
         )
     }
 
