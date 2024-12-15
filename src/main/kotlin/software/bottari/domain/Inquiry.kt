@@ -17,7 +17,7 @@ data class Inquiry(
     val title: String,
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     val member: Member,
 
     @OneToOne(mappedBy = "inquiry", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
